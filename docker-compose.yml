@@ -6,11 +6,13 @@ services:
      depends_on:
        - "db"
      environment:
-       - POSTGRES_HOST_AUTH_METHOD=trust
+       - DEGUB=1
+         POSTGRES_HOST_AUTH_METHOD: trust
      stdin_open: true # docker run -i
      tty: true        # docker run -t
      command: ["psql", "-h", "db", "-U", "postgres"]
   db:
     image: dannyma/pwd-poc_db
     environment:
-      - POSTGRES_HOST_AUTH_METHOD=trust
+      - DEBUG=1
+        POSTGRES_HOST_AUTH_METHOD: trust
