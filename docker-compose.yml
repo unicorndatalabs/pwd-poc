@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  app:
+     build: psql/
+     depends_on:
+       - "db"
+     env_file:
+       - ./config.env
+     stdin_open: true # docker run -i
+     tty: true        # docker run -t
+     command: ["./wait-for-postgres.sh", "db"]
+  db:
+    build: db/
+    env_file:
+      - ./config.env
