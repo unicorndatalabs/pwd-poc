@@ -2,6 +2,7 @@ version: '3.4'
 
 services:
   app:
+     container_name: psql
      image: dannyma/pwd-poc_app
      depends_on:
        - "db"
