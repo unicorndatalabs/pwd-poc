@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   app:
-     image: dannyma/pwd-poc_app
+     build: psql/
      depends_on:
        - "db"
      env_file:
@@ -11,6 +11,6 @@ services:
      tty: true        # docker run -t
      command: ["psql", "-h", "db", "-U", "postgres"]
   db:
-    image: dannyma/pwd-poc_db
+    build: db/
     env_file:
       - ./config.env
