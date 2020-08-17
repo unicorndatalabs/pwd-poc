@@ -1,14 +1,6 @@
 version: '3.4'
 
 services:
-  app:
-     container_name: psql
-     image: dannyma/pwd-poc_app
-     depends_on:
-       - "db"
-     stdin_open: true # docker run -i
-     tty: true        # docker run -t
-     command: ["psql", "-h", "db", "-U", "postgres"]
   db:
     image: dannyma/pwd-poc_db
     environment:
