@@ -10,11 +10,13 @@ https://github.com/jOOQ/jOOQ/tree/main/jOOQ-examples/Sakila/postgres-sakila-db
 
 ## In-Browser Docker Playground
 
-Use the button below to launch a Play-With-Docker session - DockerHub login/signup is required!
+Click on the button below to launch a Play-With-Docker session - DockerHub login/signup is required!
+
+**Open in a new tab!!! 👇**
 
 [![Try in PWD](https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/unicorndatalabs/pwd-poc/master/docker-compose.yml)
 
-Wait ~30 seconds for the container to finish initialising and then run the following to enter a `psql` session:
+Wait a few seconds for the container to finish initialising and then run the following to enter a `psql` session:
 
 ```bash
 docker exec -it $(docker ps -lq) psql -U postgres
