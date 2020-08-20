@@ -12,7 +12,7 @@ https://github.com/jOOQ/jOOQ/tree/main/jOOQ-examples/Sakila/postgres-sakila-db
 
 Click on the button below to launch a Play-With-Docker session - DockerHub login/signup is required!
 
-**Open in a new tab!!! 👇**
+**👇👇👇 Make sure you open link in a new tab!**
 
 [![Try in PWD](https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/unicorndatalabs/pwd-poc/master/docker-compose.yml)
 
@@ -26,6 +26,9 @@ You can then run `\d` to show all relevant tables in the database.
 
 ## Data Model Diagram
 
-<iframe width="560" height="315" src='https://dbdiagram.io/embed/5f3e085ccf48a141ff558487'> </iframe>
+Visit an interactive Database Diagram Viewer below:  
+👉 https://dbdiagram.io/embed/5f3e085ccf48a141ff558487
 
-![Sakilla-Data-Model](images/data-model.png "Sakilla Data Model")
+**Screenshot Example**
+
+![Sakilla-Data-Model](images/database-view.png "Sakilla Data Model")
