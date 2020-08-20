@@ -26,4 +26,6 @@ You can then run `\d` to show all relevant tables in the database.
 
 ## Data Model Diagram
 
+<iframe width="560" height="315" src='https://dbdiagram.io/embed/5f3e085ccf48a141ff558487'> </iframe>
+
 ![Sakilla-Data-Model](images/data-model.png "Sakilla Data Model")
