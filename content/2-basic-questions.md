@@ -55,7 +55,7 @@ You first show up and then someone asks you to "inspect" the data...here are a f
 
 3. How many distinct rows are there in the `actor` table?
 
-Notes:
+**Notes:**
 
 * Use of a subquery requires an alias
 * There is no way to run `count(distinct *)` within `PSQL`
@@ -123,6 +123,13 @@ Notes:
 
 ### Questions
 
+* What is the most common actor `last_name`?
+* What is the most common 1st letter in `first_name`?
+* What is the most common 2nd letter in `first_name`?
+* What is the most common last letter in `first_name`?
+* How many characters is the longest `last_name`?
+* What is the longest `last_name`?
+
 ### Answers
 
 What is the full name of the actor with `actor_id = 10`?
@@ -135,16 +142,6 @@ What is the full name of the actor with `actor_id = 10`?
  CHRISTIAN GABLE
 (1 row)
 ```
-
-
-5. What is the most common actor `last_name`?
-6. What is the most common 1st letter in `first_name`?
-7. What is the most common 2nd letter in `first_name`?
-8. What is the most common last letter in `first_name`?
-9. How many characters is the longest `last_name`?
-10. What is the longest `last_name`?
-
-
 
 What is the most common actor `last_name`?
 
@@ -197,7 +194,6 @@ How many characters is the longest `last_name`?
  ```
 
  What is the longest `last_name`?
- 
 
  ```sql
 > select last_name, length(last_name) as last_name_length from actor group by 1 order by 2 desc limit 1;
@@ -206,11 +202,6 @@ How many characters is the longest `last_name`?
 --------------+------------------
  LOLLOBRIGIDA |               12
  ```
-
-What is most common 3 letter combination from `first_name`?
-
-```sql
-
 
 7. What is the 2nd most common actor `first_name`?
 
