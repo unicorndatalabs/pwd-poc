@@ -3,14 +3,10 @@ version: '3.5'
 services:
   db:
     build: db/
-    networks:
-      - overlay
     environment:
       POSTGRES_HOST_AUTH_METHOD: 'trust'
 
   sqlpad:
-    networks:
-      - overlay
     image: sqlpad/sqlpad
     depends_on:
       - db
@@ -28,6 +24,3 @@ services:
       SQLPAD_CONNECTIONS__psql__username: postgres
       SQLPAD_CONNECTIONS__psql__multiStatementTransactionEnabled: 'true'
       SQLPAD_CONNECTIONS__psql__idleTimeoutSeconds: 86400
-
-networks:
-  overlay:
