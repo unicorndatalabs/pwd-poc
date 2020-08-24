@@ -2,7 +2,6 @@ version: '3.5'
 
 networks:
   skynet:
-    name: pwd_overlay
     driver: overlay
 
 services:
