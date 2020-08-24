@@ -2,13 +2,15 @@ version: '3.5'
 
 networks:
   skynet:
-    driver: host
+    driver: overlay
 
 services:
   db:
     image: dannyma/pwd-poc_db
     networks:
       - skynet
+    ports:
+      - "5432:5432"
     environment:
       POSTGRES_HOST_AUTH_METHOD: 'trust'
 
@@ -20,6 +22,7 @@ services:
       - "3000:3000"
     networks:
       - skynet
+      - host
     environment:
       SQLPAD_AUTH_DISABLED: 'true'
       SQLPAD_AUTH_DISABLED_DEFAULT_ROLE: 'admin'
