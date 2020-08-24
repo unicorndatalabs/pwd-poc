@@ -1,16 +1,19 @@
-version: '3.4'
+version: '3.5'
 
 services:
-  app:
-     build: psql/
-     depends_on:
-       - "db"
-     env_file:
-       - ./config.env
-     stdin_open: true # docker run -i
-     tty: true        # docker run -t
-     command: ["psql", "-h", "db", "-U", "postgres"]
   db:
     build: db/
-    env_file:
-      - ./config.env
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    image: sqlpad/sqlpad
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    environment:
+      SQLPAD_ADMIN: admin@sqlpad.com
+      SQLPAD_ADMIN_PASSWORD: admin

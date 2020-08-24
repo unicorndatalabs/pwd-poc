@@ -1,7 +1,19 @@
-version: '3.4'
+version: '3.5'
 
 services:
   db:
     image: dannyma/pwd-poc_db
     environment:
       POSTGRES_HOST_AUTH_METHOD: 'trust'
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    image: sqlpad/sqlpad
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    environment:
+      SQLPAD_ADMIN: admin@sqlpad.com
+      SQLPAD_ADMIN_PASSWORD: admin
