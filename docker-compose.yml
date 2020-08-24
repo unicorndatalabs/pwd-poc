@@ -8,7 +8,7 @@ services:
   db:
     image: dannyma/pwd-poc_db
     networks:
-      - pwd_overlay
+      - overlay
     environment:
       POSTGRES_HOST_AUTH_METHOD: 'trust'
 
@@ -19,7 +19,7 @@ services:
     ports:
       - "3000:3000"
     networks:
-      - pwd_overlay
+      - overlay
     environment:
       SQLPAD_AUTH_DISABLED: 'true'
       SQLPAD_AUTH_DISABLED_DEFAULT_ROLE: 'admin'
