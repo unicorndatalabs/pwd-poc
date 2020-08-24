@@ -16,17 +16,11 @@ Click on the button below to launch a Play-With-Docker session - DockerHub login
 
 [![Try in PWD](https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/unicorndatalabs/pwd-poc/master/docker-compose.yml)
 
-Wait a few seconds for the container to finish initialising and then run the following to enter a `psql` session:
-
-```bash
-docker exec -it $(docker ps -lq) psql -U postgres
-```
-
-You can then run `\d` to show all relevant tables in the database.
+Once inside the `Play-With-Docker` session you can click on the `3000` port to access the `SQLPad` interface.
 
 ## Data Model Diagram
 
-Visit an interactive Database Diagram Viewer below:  
+View an interactive Database Diagram Viewer below:  
 👉 https://dbdiagram.io/embed/5f3e085ccf48a141ff558487
 
 **Screenshot Example**
