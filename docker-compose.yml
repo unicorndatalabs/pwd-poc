@@ -22,7 +22,6 @@ services:
       - "3000:3000"
     networks:
       - skynet
-      - host
     environment:
       SQLPAD_AUTH_DISABLED: 'true'
       SQLPAD_AUTH_DISABLED_DEFAULT_ROLE: 'admin'
