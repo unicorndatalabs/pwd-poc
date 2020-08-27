@@ -2,14 +2,13 @@ version: '3.5'
 
 networks:
   skynet:
-    external:
-      name: "host"
+    name: "host"
 
 services:
   db:
     image: dannyma/pwd-poc_db
     ports:
-      - "5432:5432"
+      - "127.0.0.1:5432:5432"
     networks:
       - skynet
     environment:
@@ -31,7 +30,7 @@ services:
       SQLPAD_SEED_DATA_PATH: /etc/sqlpad/seed-data
       SQLPAD_CONNECTIONS__psql__name: psql
       SQLPAD_CONNECTIONS__psql__driver: postgres
-      SQLPAD_CONNECTIONS__psql__host: db
+      SQLPAD_CONNECTIONS__psql__host: 127.0.0.1
       SQLPAD_CONNECTIONS__psql__username: postgres
       SQLPAD_CONNECTIONS__psql__multiStatementTransactionEnabled: 'true'
       SQLPAD_CONNECTIONS__psql__idleTimeoutSeconds: 86400
