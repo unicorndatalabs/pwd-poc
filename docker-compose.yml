@@ -2,12 +2,10 @@ version: '3.5'
 
 services:
   db:
-    image: dannyma/pwd-poc_db
-    environment:
-      POSTGRES_HOST_AUTH_METHOD: 'trust'
+    image: dannyma/psql-sakilla:latest
 
   sqlpad:
-    image: sqlpad/sqlpad
+    image: sqlpad/sqlpad:5.5
     depends_on:
       - db
     ports:
