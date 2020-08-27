@@ -1,16 +1,10 @@
 version: '3.5'
 
-networks:
-  skynet:
-    name: "host"
-
 services:
   db:
     image: dannyma/pwd-poc_db
     ports:
       - "127.0.0.1:5432:5432"
-    networks:
-      - skynet
     environment:
       POSTGRES_HOST_AUTH_METHOD: 'trust'
 
@@ -20,8 +14,6 @@ services:
       - db
     ports:
       - "3000:3000"
-    networks:
-      - skynet
     environment:
       SQLPAD_AUTH_DISABLED: 'true'
       SQLPAD_AUTH_DISABLED_DEFAULT_ROLE: 'admin'
