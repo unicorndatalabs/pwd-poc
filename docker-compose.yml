@@ -15,7 +15,6 @@ services:
       SQLPAD_AUTH_DISABLED_DEFAULT_ROLE: 'admin'
       SQLPAD_APP_LOG_LEVEL: debug
       SQLPAD_WEB_LOG_LEVEL: warn
-      SQLPAD_SEED_DATA_PATH: /etc/sqlpad/seed-data
       SQLPAD_CONNECTIONS__psql__name: psql
       SQLPAD_CONNECTIONS__psql__driver: postgres
       SQLPAD_CONNECTIONS__psql__host: db
