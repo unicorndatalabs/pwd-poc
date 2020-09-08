@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  db:
+    image: dannyma/psql-sakilla:latest
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
+
+  jupyter:
+    image: rocker/verse:4.0.2
+    depends_on:
+      - db
+    ports:
+      - "8787:8787"
+    environment:
+      DISABLE_AUTH: 'true'

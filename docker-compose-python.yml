@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  db:
+    image: dannyma/psql-sakilla:latest
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
+
+  jupyter:
+    image: jupyter/scipy-notebook
+    depends_on:
+      - db
+    ports:
+      - "8888:8888"
+    command: "start-notebook.sh \
+      --NotebookApp.token=''"
